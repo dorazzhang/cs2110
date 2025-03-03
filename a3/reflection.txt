@@ -1,0 +1,63 @@
+# Assignment 3 reflection
+
+## Submitter metadata
+
+Partner 1: Firstname Lastname (NetID)  - Dora Zhang (dz366)
+Partner 2: Firstname Lastname (NetID)  - Chloe Tseng (ct685)
+
+Hours spent working on this assignment: 0.0  - TODO
+
+## Verification questions
+
+Run your `Gradebook` application with program arguments so that it adds summary statistics to 
+`csv/mock_2800_hw_gradebook.csv`. This file is meant to mimic the hw grading policy of Matt's
+2800 course, where there are 12 assignments and the lowest two homework scores are dropped (Ex).
+Note that the names in this file were produced with Generative AI and the scores are random, so
+any similarity to actual 2800 students is purely coincidental. Use the output CSV file to answer
+the following questions
+
+1. What was Sofia Martinez's average homework score (across the non-dropped assignments)? 
+
+   Answer: TODO
+
+2. Which assignment had the lowest average score?
+
+   Answer: TODO
+
+3. On which assignment were the students' scores most spread out? 
+
+   Answer: TODO
+
+## Reflection questions
+
+1. What were the two bugs in the `ArraySeq` class? (be specific)  Describe the testcases you wrote
+   that triggered these bugs and what the failure signature was for each (e.g., invariant violated,
+   a particular exception was thrown, etc.).
+
+   Answer: One of the bugs was in the remove() method. After shifting all contents to the left,
+   it did not decrement size and instead just set the index at size - 1 to null. Since contents
+   requires that all elements from indexes 0 - size - 1 are non-null, this breaks the invariant.
+   It was caught by a testcase that tested remove on a sequence where element exists in the
+   sequence. The failure signature was that the invariant was violated. Another one of the bugs was
+   in the insertBefore() method, if the sequence is already full shifting the elements will cause an
+   out of bounds error. I tested a case where I tried to add 10 before 11 in a sequence that is all has
+   10 elements.
+
+2. Which `DLinkedSeq` operation did you think was the most difficult to implement and debug?  What
+   corner case caught you by surprise or was particularly awkward to handle?  Finally, describe a
+   testing scenario that you added which covers this corner case.
+
+   Answer: TODO
+
+3. Describe the testing that you did to confirm the functionality of the `Gradebook` class. Did you
+   write any unit tests and/or additional end-to-end tests? Were there particular methods that you
+   felt required more or less testing? Were there issues with your code that you discovered through
+   this testing?
+
+   Answer: TODO
+
+4. How did you plan and budget your time so that you could complete and debug your application by
+   the deadline?  If you worked as partners, how did you coordinate to ensure in advance that you
+   would have sufficient time to work on the project together?
+
+   Answer: TODO
